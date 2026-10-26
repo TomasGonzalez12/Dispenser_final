@@ -4,25 +4,37 @@
 #include "hardware/adc.h"
 #include "hardware/pwm.h"
 #include "hardware.h"
-#include "oled.h"
+#include "Oled/picoOled.h"
 #include "botones.h"
 #include "servo.h"
 #include "balanza.h"
 
+t_OledParams oled;
 
 void init_config(){
     stdio_init_all();
 
-    // 1. Inicialización de I2C y Pantalla OLED
+    // 1. Inicialización de I2C
     i2c_init(I2C_PORT, 400000);
     gpio_set_function(PIN_SDA, GPIO_FUNC_I2C);
     gpio_set_function(PIN_SCL, GPIO_FUNC_I2C);
     gpio_pull_up(PIN_SDA);
     gpio_pull_up(PIN_SCL);
-    
-    sleep_ms(100); // Esperar que la pantalla encienda
-    oled_init();
-    oled_clear();
+
+    //Oled
+    oled.i2c = i2c0;
+    oled.SDA_PIN = PIN_SDA;
+    oled.SCL_PIN = PIN_SCL;
+
+    oled.ctlrType = CTRL_SSD1306;
+    oled.i2c_address = OLED_ADDR;
+    oled.height = H_64;
+    oled.width = W_132;      
+
+    oledI2cConfig(&oled);
+
+    oledSetTTYMode(&oled, true);
+    oledSet_invert(&oled, false);
 
     // 2. Inicialización de ADC
     adc_init();

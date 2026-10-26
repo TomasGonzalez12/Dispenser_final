@@ -6,7 +6,7 @@
 #include "hardware/adc.h"
 #include "hardware/pwm.h"
 #include "hardware.h"
-#include "oled.h"
+#include "Oled/picoOled.h"
 #include "botones.h"
 #include "servo.h"
 #include "balanza.h"
@@ -14,7 +14,7 @@
 
 int main() {
     init_config();
-    
+
     //Bucle Principal
     while (true) {
         float voltaje_actual = leer_voltaje_promedio(40);

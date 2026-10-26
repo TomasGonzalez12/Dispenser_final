@@ -1,6 +1,8 @@
 #ifndef HARDWARE_H
 #define HARDWARE_H
 
+#include "Oled/picoOled.h"
+
 // --- CONFIGURACIÓN DE PINES ---
 //botones
 #define PULS_SUBIR_PIN      (10)
@@ -17,6 +19,12 @@
 //adc
 #define PIN_ADC             (26)
 #define CANAL_ADC           (0)  // GPIO 26 corresponde al canal 0
+
+//OLED
+#define I2C_PORT            (i2c0)
+#define OLED_ADDR           (0x3C)
+
+extern t_OledParams oled;
 
 //VARIABLES 
 // --- Constantes electricas y calibracion---
@@ -35,8 +43,5 @@ extern float voltaje_tara;
 
 //Funciones
 void init_config();
-void PULS_SELECCIONallback(uint, uint32_t);
-int64_t debounce_alarm_cb(alarm_id_t id, void *user_data);
-float leer_voltaje_promedio(int);
 
 #endif
