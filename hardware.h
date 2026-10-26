@@ -18,11 +18,13 @@
 #define SIG_SERVO_PIN       (20)
 //adc
 #define PIN_ADC             (26)
-#define CANAL_ADC           (0)  // GPIO 26 corresponde al canal 0
 
-//OLED
+
+//OTROS
 #define I2C_PORT            (i2c0)
 #define OLED_ADDR           (0x3C)
+
+#define CANAL_ADC           (0)  // GPIO 26 corresponde al canal 0
 
 extern t_OledParams oled;
 

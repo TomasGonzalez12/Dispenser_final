@@ -14,15 +14,8 @@ t_OledParams oled;
 void init_config(){
     stdio_init_all();
 
-    // 1. Inicialización de I2C
-    i2c_init(I2C_PORT, 400000);
-    gpio_set_function(PIN_SDA, GPIO_FUNC_I2C);
-    gpio_set_function(PIN_SCL, GPIO_FUNC_I2C);
-    gpio_pull_up(PIN_SDA);
-    gpio_pull_up(PIN_SCL);
-
     //Oled
-    oled.i2c = i2c0;
+    oled.i2c = I2C_PORT;
     oled.SDA_PIN = PIN_SDA;
     oled.SCL_PIN = PIN_SCL;
 
