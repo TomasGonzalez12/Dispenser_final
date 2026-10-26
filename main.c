@@ -6,7 +6,7 @@
 #include "hardware/adc.h"
 #include "hardware/pwm.h"
 #include "hardware.h"
-#include "Oled/picoOled.h"
+#include "picoOled.h"
 #include "botones.h"
 #include "servo.h"
 #include "balanza.h"

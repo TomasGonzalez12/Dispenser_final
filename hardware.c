@@ -4,7 +4,7 @@
 #include "hardware/adc.h"
 #include "hardware/pwm.h"
 #include "hardware.h"
-#include "Oled/picoOled.h"
+#include "picoOled.h"
 #include "botones.h"
 #include "servo.h"
 #include "balanza.h"
@@ -66,5 +66,6 @@ void init_config(){
     gpio_set_irq_enabled(puls_seleccion.gpio_pin, GPIO_IRQ_EDGE_FALL, true);
 
 }
+
 
 

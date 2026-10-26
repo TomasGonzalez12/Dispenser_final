@@ -55,7 +55,7 @@ target_link_libraries(balanza
 # Add the standard include files to the build
 target_include_directories(balanza PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}
-        {CMAKE_CURRENT_LIST_DIR}/Oled
+        ${CMAKE_CURRENT_LIST_DIR}/Oled
 )
 
 pico_add_extra_outputs(balanza)
