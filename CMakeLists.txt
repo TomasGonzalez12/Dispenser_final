@@ -35,7 +35,14 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(balanza main.c botones.c servo.c Oled/picoOled.c hardware.c balanza.c)
+add_executable(balanza 
+    main.c
+    hardware.c 
+    Botones/botones.c 
+    Servo/servo.c 
+    Oled/picoOled.c 
+    Balanza/balanza.c
+)
 
 pico_set_program_name(balanza "balanza")
 pico_set_program_version(balanza "0.1")
@@ -56,6 +63,10 @@ target_link_libraries(balanza
 target_include_directories(balanza PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}
         ${CMAKE_CURRENT_LIST_DIR}/Oled
+        ${CMAKE_CURRENT_LIST_DIR}/Balanza
+        ${CMAKE_CURRENT_LIST_DIR}/Botones
+        ${CMAKE_CURRENT_LIST_DIR}/Servo
+        ${CMAKE_CURRENT_LIST_DIR}/HC-SR04
 )
 
 pico_add_extra_outputs(balanza)
