@@ -39,7 +39,7 @@ int64_t debounce_alarm_cb(alarm_id_t id, void *user_data)
 }
 
 // Callback general de interrupción GPIO
-void PULS_SELECCIONallback(uint gpio, uint32_t event_mask)
+void puls_callback(uint gpio, uint32_t event_mask)
 {
     if (!(event_mask & GPIO_IRQ_EDGE_FALL)) return;
   

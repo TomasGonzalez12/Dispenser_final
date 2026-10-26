@@ -20,6 +20,6 @@ void        pulsador_init (pulsadores_t *puls, uint8_t puls_gpio, bool estado);
 
 //Antirrebote
 int64_t     debounce_alarm_cb (alarm_id_t id, void *user_data);
-void        PULS_SELECCIONallback     (uint gpio, uint32_t event_mask);
+void        puls_callback(uint gpio, uint32_t event_mask);
 
 #endif
