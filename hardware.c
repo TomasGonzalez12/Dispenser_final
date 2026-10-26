@@ -29,16 +29,14 @@ void init_config(){
     oledSetTTYMode(&oled, true);
     oledSet_invert(&oled, false);
 
-    // 2. Inicialización de ADC
-    adc_init();
-    adc_gpio_init(PIN_ADC);
-    adc_select_input(CANAL_ADC);
-
-    // 3. Proceso de Tara Inicial
-    printf("BALANZA AD623 - Tarando...\n");
-    sleep_ms(2500);
-    voltaje_tara = leer_voltaje_promedio(150);
-    printf("Tara completada. Voltaje base: %.4f V\n", voltaje_tara);
+    // 2. Inicialización de balanza ADC
+    balanza_init();
+    oledClear(&oled, BLACK);
+    oledDraw_string(&oled, 0, 0,  "Tarando...", NORMAL_SIZE, WHITE);
+    oledDraw_string(&oled, 0, 16, "Plato vacio", NORMAL_SIZE, WHITE);
+    oledDisplay(&oled);
+    sleep_ms(1500);                         // asentar el amplificador
+    printf("Tara %s\n", balanza_tarar() ? "OK" : "inestable");
 
     // Config PWM
     gpio_set_function(SIG_SERVO_PIN, GPIO_FUNC_PWM);
