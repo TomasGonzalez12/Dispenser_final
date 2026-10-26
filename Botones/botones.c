@@ -5,6 +5,7 @@
 pulsadores_t puls_subir;
 pulsadores_t puls_bajar;
 pulsadores_t puls_seleccion;
+pulsadores_t puls_tarar;
 
 void pulsador_init(pulsadores_t *puls, uint8_t puls_gpio, bool estado)
 {
@@ -52,7 +53,9 @@ void puls_callback(uint gpio, uint32_t event_mask)
         puls = &puls_bajar;
     } else if (gpio == puls_seleccion.gpio_pin) {
         puls = &puls_seleccion;
-    } else {
+    }else if (gpio == puls_tarar.gpio_pin) {
+        puls = &puls_tarar;
+    }else {
         return; // Si fue otro pin, ignoramos
     }
 

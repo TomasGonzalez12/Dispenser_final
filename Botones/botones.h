@@ -13,6 +13,7 @@ typedef struct
 extern pulsadores_t puls_subir;
 extern pulsadores_t puls_bajar;
 extern pulsadores_t puls_seleccion;
+extern pulsadores_t puls_tarar;
 
 //PROTOTIPO FUNCIONES
 //Inicializacion pulsadores

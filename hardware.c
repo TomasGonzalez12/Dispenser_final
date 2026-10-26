@@ -51,10 +51,12 @@ void init_config(){
     pulsador_init(&puls_subir, PULS_SUBIR_PIN, false);
     pulsador_init(&puls_bajar, PULS_BAJAR_PIN, false);
     pulsador_init(&puls_seleccion, PULS_SELECCION_PIN, false);
+    pulsador_init(&puls_tarar, PULS_TARAR_PIN, false);
 
     gpio_set_irq_enabled_with_callback(puls_subir.gpio_pin, GPIO_IRQ_EDGE_FALL, true, &puls_callback);
     gpio_set_irq_enabled(puls_bajar.gpio_pin, GPIO_IRQ_EDGE_FALL, true);
     gpio_set_irq_enabled(puls_seleccion.gpio_pin, GPIO_IRQ_EDGE_FALL, true);
+    gpio_set_irq_enabled(puls_tarar.gpio_pin, GPIO_IRQ_EDGE_FALL, true);
 
 }
 
