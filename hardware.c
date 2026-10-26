@@ -29,7 +29,7 @@ void init_config(){
     oled.ctlrType = CTRL_SSD1306;
     oled.i2c_address = OLED_ADDR;
     oled.height = H_64;
-    oled.width = W_132;      
+    oled.width = W_128;      
 
     oledI2cConfig(&oled);
 
