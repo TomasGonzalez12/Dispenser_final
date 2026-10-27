@@ -27,22 +27,8 @@
 
 #define CANAL_ADC           (0)  // GPIO 26 corresponde al canal 0
 
+//Variable OLED
 extern t_OledParams oled;
-
-//VARIABLES 
-// --- Constantes electricas y calibracion---
-extern const float VREF_PICO;
-extern const float CONVERSION_FACTOR;
-
-extern const float PESO_OBJETO_PRUEBA_GRAMOS;
-extern const float VARIACION_VOLTAJE_MEDIDA;
-extern const float FACTOR_GRAMOS_POR_VOLTIO;
-
-// --- Variables y filtro digital ---
-extern float gramos_filtrados;
-extern const float alfa;
-extern int peso_fijo_pantalla;
-extern float voltaje_tara;
 
 //Funciones
 void init_config();

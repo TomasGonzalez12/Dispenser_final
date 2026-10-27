@@ -5,12 +5,12 @@
 #include "hardware/i2c.h"
 #include "hardware/adc.h"
 #include "hardware/pwm.h"
-#include "hardware.h"
-#include "picoOled.h"
-#include "botones.h"
-#include "servo.h"
 #include "balanza.h"
-
+#include "botones.h"
+#include "hardware.h"
+#include "hc_sr04.h"
+#include "picoOled.h"
+#include "servo.h"
 
 int main() {
     init_config();

@@ -37,11 +37,12 @@ pico_sdk_init()
 
 add_executable(balanza 
     main.c
-    hardware.c 
-    Botones/botones.c 
-    Servo/servo.c 
-    Oled/picoOled.c 
     Balanza/balanza.c
+    Botones/botones.c 
+    Hardware/hardware.c
+    HC-SR04/hc_sr04.c
+    Oled/picoOled.c 
+    Servo/servo.c 
 )
 
 pico_set_program_name(balanza "balanza")
@@ -62,11 +63,13 @@ target_link_libraries(balanza
 # Add the standard include files to the build
 target_include_directories(balanza PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}
-        ${CMAKE_CURRENT_LIST_DIR}/Oled
         ${CMAKE_CURRENT_LIST_DIR}/Balanza
         ${CMAKE_CURRENT_LIST_DIR}/Botones
-        ${CMAKE_CURRENT_LIST_DIR}/Servo
+        ${CMAKE_CURRENT_LIST_DIR}/Hardware
         ${CMAKE_CURRENT_LIST_DIR}/HC-SR04
+        ${CMAKE_CURRENT_LIST_DIR}/Oled
+        ${CMAKE_CURRENT_LIST_DIR}/Servo
+        
 )
 
 pico_add_extra_outputs(balanza)

@@ -3,11 +3,13 @@
 #include "hardware/i2c.h"
 #include "hardware/adc.h"
 #include "hardware/pwm.h"
-#include "hardware.h"
-#include "picoOled.h"
-#include "botones.h"
-#include "servo.h"
 #include "balanza.h"
+#include "botones.h"
+#include "hardware.h"
+#include "hc_sr04.h"
+#include "picoOled.h"
+#include "servo.h"
+
 
 t_OledParams oled;
 
@@ -57,6 +59,9 @@ void init_config(){
     gpio_set_irq_enabled(puls_bajar.gpio_pin, GPIO_IRQ_EDGE_FALL, true);
     gpio_set_irq_enabled(puls_seleccion.gpio_pin, GPIO_IRQ_EDGE_FALL, true);
     gpio_set_irq_enabled(puls_tarar.gpio_pin, GPIO_IRQ_EDGE_FALL, true);
+
+    //HC-SR04
+    hcsr04_init();
 
 }
 
