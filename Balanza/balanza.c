@@ -18,7 +18,6 @@ static volatile uint32_t  s_ventana_id;      // se incrementa en cada ventana nu
  *  Estado de la balanza
  * ------------------------------------------------------------------- */
 static uint32_t s_ultimo_id;
-static float    s_factor_g_por_v = BALANZA_FACTOR_G_POR_V;
 static float    s_tara_cuentas;
 static float    s_cuentas;
 static float    s_gramos;
@@ -137,7 +136,7 @@ bool balanza_actualizar(void)
     s_ok = (s_cuentas > BALANZA_CUENTAS_MIN) && (s_cuentas < BALANZA_CUENTAS_MAX);
 
     // 2) Cuentas -> voltios -> gramos (respecto de la tara)
-    float gramos = cuentas_a_voltios(s_cuentas - s_tara_cuentas) * s_factor_g_por_v;
+    float gramos = cuentas_a_voltios(s_cuentas - s_tara_cuentas) * BALANZA_FACTOR_G_POR_V;
 
     // 3) EMA adaptativo: lento si está quieto, rápido si hay un cambio grande
     float error = gramos - s_gramos;
