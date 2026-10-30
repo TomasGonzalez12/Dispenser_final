@@ -1,5 +1,4 @@
 #include "pico/stdlib.h"
-#include "hardware.h"
 #include "botones.h"
 
 pulsadores_t puls_subir;
@@ -64,4 +63,15 @@ void puls_callback(uint gpio, uint32_t event_mask)
 
     // Lanzamos la alarma pasando el objeto del botón como user_data
     add_alarm_in_ms(DELAY_PULS, debounce_alarm_cb, puls, true);
+}
+
+
+//Para limpiar la bandera de la interrupción
+bool pulsador_presionado(pulsadores_t *puls)
+{
+    uint32_t irq = save_and_disable_interrupts();
+    bool p = puls->estado;
+    puls->estado = false;
+    restore_interrupts(irq);
+    return p;
 }

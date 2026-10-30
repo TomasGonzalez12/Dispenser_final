@@ -15,6 +15,8 @@
 #define SERVO_TOP           (59999)
 #define SERVO_DIV           (50.0f)
 
+#include "pico/stdlib.h"
+
 //Variables
 extern uint slice;  //del PWM
 extern uint channel; //PWM

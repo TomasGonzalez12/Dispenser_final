@@ -118,8 +118,9 @@ bool balanza_tarar(void)
     s_dispensando   = false;
     s_objetivo_ok   = false;
     s_conf          = 0;
+    s_ok = (prom > BALANZA_CUENTAS_MIN) && (prom < BALANZA_CUENTAS_MAX);
 
-    return estable;
+    return estable & s_ok;
 }
 
 bool balanza_calibrar(float peso_patron_g)
