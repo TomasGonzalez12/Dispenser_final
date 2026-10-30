@@ -1,9 +1,9 @@
 #ifndef SERVO_H
 #define SERVO_H
 
-#define PUERTA_CERRADA      (10)       //grados de angulos
-#define PUERTA_ABIERTA      (170)
-#define TIEMPO_BLOQUEO_MS   (10UL * 1000UL)   // 30seg
+#define PUERTA_CERRADA      (5)       //grados de angulos
+#define PUERTA_ABIERTA      (90)
+#define TIEMPO_BLOQUEO_MS   (10UL * 1000UL)   // 10seg
 
 #define SERVO_MIN_US        (600)
 #define SERVO_MAX_US        (2400)

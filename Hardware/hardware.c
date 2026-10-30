@@ -1,7 +1,5 @@
-#include <stdio.h>
 #include "pico/stdlib.h"
 #include "hardware/i2c.h"
-#include "hardware/adc.h"
 #include "hardware/pwm.h"
 #include "balanza.h"
 #include "botones.h"
@@ -30,7 +28,7 @@ void init_config(){
     oled.SDA_PIN = PIN_SDA;
     oled.SCL_PIN = PIN_SCL;
 
-    oled.ctlrType = CTRL_SSD1306;
+    oled.ctlrType = CTRL_SSD1306; //CTR_SH1106 si usamos la otra
     oled.i2c_address = OLED_ADDR;
     oled.height = H_64;
     oled.width = W_128;      

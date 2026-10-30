@@ -1,7 +1,7 @@
 #ifndef HARDWARE_H
 #define HARDWARE_H
 
-#include "Oled/picoOled.h"
+#include "picoOled.h"
 
 // --- CONFIGURACIÓN DE PINES ---
 //botones
