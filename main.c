@@ -274,9 +274,6 @@ int main(void)
         case ST_ESPERA:
             if (!balanza_ok()) {
                 entrar_estado(ST_ERROR);
-            } else if (pulsador_presionado(&puls_tarar)) {      // extra: re-tarar (plato nuevo)
-                tarar_con_mensaje();
-                redibujar = true;
             } else if (pulsador_presionado(&puls_seleccion)) {  // extra: cambiar el objetivo
                 entrar_estado(ST_SELECCION);
             } else if (hcsr04_objeto_detectado()) {
