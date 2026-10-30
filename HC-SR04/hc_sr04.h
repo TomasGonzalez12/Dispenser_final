@@ -45,8 +45,6 @@ void     hcsr04_actualizar(void);
 // Última distancia válida medida en mm, o DISTANCIA_LEJOS.
 uint32_t hcsr04_distancia_mm(void);
 
-// Nivel: hay un objeto dentro de DISTANCIA_OBJETIVO (ya confirmado).
-bool     hcsr04_hay_objeto(void);
 
 // Evento: devuelve true UNA vez cuando aparece un objeto (se consume al leerlo).
 bool     hcsr04_objeto_detectado(void);

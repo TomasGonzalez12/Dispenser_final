@@ -76,9 +76,7 @@ bool  balanza_actualizar(void);
 
 float balanza_peso_g(void);                // peso filtrado en gramos
 int   balanza_peso_pantalla_g(void);       // entero estable, para la OLED
-bool  balanza_estable(void);               // lectura quieta durante >= 0,5 s
 bool  balanza_ok(void);                    // false = señal fuera de rango (falla)
-float balanza_voltaje(void);               // voltaje en el ADC (depuración)
 
 // Control del dispensado
 void  balanza_iniciar_dispensado(float objetivo_g);  // al abrir la compuerta

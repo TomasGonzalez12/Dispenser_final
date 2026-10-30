@@ -180,10 +180,6 @@ uint32_t hcsr04_distancia_mm(void)
     return s_ultima_mm;
 }
 
-bool hcsr04_hay_objeto(void)
-{
-    return s_hay_objeto;
-}
 
 bool hcsr04_objeto_detectado(void)
 {

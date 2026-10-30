@@ -174,9 +174,7 @@ bool balanza_actualizar(void)
 
 float balanza_peso_g(void)           { return s_gramos; }
 int   balanza_peso_pantalla_g(void)  { return s_peso_pantalla; }
-bool  balanza_estable(void)          { return s_estable_cnt >= BALANZA_VENTANAS_ESTABLE; }
 bool  balanza_ok(void)               { return s_ok; }
-float balanza_voltaje(void)          { return cuentas_a_voltios(s_cuentas); }
 
 void balanza_iniciar_dispensado(float objetivo_g)
 {
