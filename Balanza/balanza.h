@@ -70,12 +70,6 @@ void  balanza_init(void);
 // Devuelve false si la señal no se estabilizó (igual queda tarada con lo último medido).
 bool  balanza_tarar(void);
 
-// Calibra con un peso patrón ya colocado (tara previa hecha). Bloqueante (~1 s).
-// Devuelve false si no hay peso, está inestable o el patrón es inválido.
-bool  balanza_calibrar(float peso_patron_g);
-float balanza_get_factor(void);            // g/V actual
-void  balanza_set_factor(float g_por_v);
-
 // Llamar en cada vuelta del bucle principal. No bloquea.
 // Devuelve true cuando procesó una muestra nueva (cada 20 ms).
 bool  balanza_actualizar(void);

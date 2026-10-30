@@ -123,21 +123,6 @@ bool balanza_tarar(void)
     return estable & s_ok;
 }
 
-bool balanza_calibrar(float peso_patron_g)
-{
-    float prom = 0.0f;
-    bool  estable = promediar(BALANZA_TARA_VENTANAS, BALANZA_TARA_DISPERSION_CTAS, &prom);
-    float dv = cuentas_a_voltios(prom - s_tara_cuentas);
-
-    if (!estable || peso_patron_g <= 0.0f || dv < 0.01f) {
-        return false;
-    }
-    s_factor_g_por_v = peso_patron_g / dv;
-    return true;
-}
-
-float balanza_get_factor(void)             { return s_factor_g_por_v; }
-void  balanza_set_factor(float g_por_v)    { s_factor_g_por_v = g_por_v; }
 
 bool balanza_actualizar(void)
 {

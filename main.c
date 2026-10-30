@@ -19,8 +19,8 @@
  * ===================================================================== */
 
 /* ---------- Parámetros ---------- */
-#define OBJETIVO_MIN_G            (200)
-#define OBJETIVO_MAX_G            (500)
+#define OBJETIVO_MIN_G            (0)
+#define OBJETIVO_MAX_G            (2000)
 #define OBJETIVO_PASO_G           (50)
 #define OBJETIVO_INICIAL_G        (200)
 
