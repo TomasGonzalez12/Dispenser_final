@@ -36,9 +36,6 @@
 #define BALANZA_ZONA_MUERTA_G        (2.0f)    // |peso| menor a esto se muestra 0
 #define BALANZA_HISTERESIS_PANT_G    (2)       // cambio mínimo para refrescar el valor
 
-/* ---------- Estabilidad ---------- */
-#define BALANZA_UMBRAL_ESTABLE_G     (3.0f)
-#define BALANZA_VENTANAS_ESTABLE     (25)      // 25 x 20 ms = 0,5 s
 
 /* ---------- Tara y calibración ---------- */
 #define BALANZA_TARA_VENTANAS        (50)      // 50 x 20 ms = 1 s de promedio
@@ -55,9 +52,10 @@
 #define BALANZA_CUENTAS_MAX          (4000.0f) // por encima: sobrecarga / saturación
 
 /* ---------- Límites para elegir el peso objetivo (botones) ---------- */
-#define BALANZA_OBJETIVO_MIN_G       (10)
-#define BALANZA_OBJETIVO_MAX_G       (1000)    // la celda de 2 kg también soporta el plato
-#define BALANZA_OBJETIVO_PASO_G      (10)
+#define OBJETIVO_MIN_G            (0)
+#define OBJETIVO_MAX_G            (2000)
+#define OBJETIVO_PASO_G           (50)
+#define OBJETIVO_INICIAL_G        (200)
 
 /* =====================================================================
  *  API

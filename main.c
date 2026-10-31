@@ -18,12 +18,6 @@
  *  ST_ERROR        señal de la balanza fuera de rango (puerta cerrada)
  * ===================================================================== */
 
-/* ---------- Parámetros ---------- */
-#define OBJETIVO_MIN_G            (0)
-#define OBJETIVO_MAX_G            (2000)
-#define OBJETIVO_PASO_G           (50)
-#define OBJETIVO_INICIAL_G        (200)
-
 #define TIEMPO_MAX_DISPENSADO_MS  (30000UL)   // seguridad: cierra aunque no llegue al peso
 #define PERIODO_PANTALLA_MS       (200UL)     // la OLED tarda ~25 ms por refresco
 #define MENSAJE_MS                (800)

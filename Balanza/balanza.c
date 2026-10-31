@@ -144,13 +144,6 @@ bool balanza_actualizar(void)
                                                           : BALANZA_ALFA_LENTO;
     s_gramos += alfa * error;
 
-    // 4) Estabilidad
-    if (fabsf(error) < BALANZA_UMBRAL_ESTABLE_G) {
-        if (s_estable_cnt < UINT16_MAX) s_estable_cnt++;
-    } else {
-        s_estable_cnt = 0;
-    }
-
     // 5) Valor para pantalla: zona muerta y histéresis (no afectan al filtro)
     int redondeado = (int)roundf(s_gramos);
     if (fabsf(s_gramos) < BALANZA_ZONA_MUERTA_G) {
